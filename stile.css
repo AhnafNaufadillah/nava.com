@@ -1,0 +1,122 @@
+/* Gaya dasar untuk seluruh halaman */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* Gaya untuk navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e4a3b; /* Hijau gelap, seperti hutan */
+    padding: 1rem 2rem;
+    color: #e8dcb9; /* Coklat muda, seperti pasir/tanah */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e8dcb9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+    color: #f7e9c9; /* Warna sedikit lebih cerah saat di-hover */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #e8dcb9;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek hover pada menu */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #79a184; /* Hijau muda */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f7e9c9;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Gaya untuk tombol menu pada mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #e8dcb9;
+    transition: all 0.3s ease;
+}
+
+/* Media query untuk membuat navbar responsif pada layar kecil */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #3b5c49; /* Warna sedikit lebih terang */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links li a {
+        padding: 1rem;
+        width: 100%;
+        display: block;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}

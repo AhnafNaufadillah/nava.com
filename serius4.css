@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121212;
+}
+
+.container{
+    border: 1px solid #8d8d8d;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.container .heading{
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.form{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form .btn-container{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.form .btn{
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 8px;
+    border: 1px solid #10aa1dd8;
+    border-bottom: 1px solid #1b6d44;
+    background: linear-gradient(135deg,
+    #00de258f, #1f992f);
+    color: #fff;
+    font-weight: bolder;
+    transition: all 0.2s ease;
+    box-shadow: 0px 2px 3px #000d3848, inset 0px 4px 5px #1c920d, inset 0px -4px 5px #0c660c ;
+
+}
+
+.form .btn:active{
+    box-shadow: inset 0px 4px 5px #16aa1d, inset 0px -4px 5px #34bd5d;
+    transform: scale(0.995); 
+}
+
+.input-field{
+    position: relative;
+}
+
+.input-field label{
+    position: absolute;
+    color: #8d8d8d;
+    pointer-events: none;
+    background-color: transparent;
+    left: 15px;
+    transform: translateY(0.6rem);
+    transition: all 0.3 ease;
+}
+
+.input-field input{
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #8d8d8d;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.input-field input:focus,
+.input-field input:active{
+    outline: none;
+    border: 1px solid #3cbb42;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label{
+    transform: translateY(-51%) translateX(-10px);
+    scale :(0.8);
+    background-color: #fff;
+    padding: 0px 15px;
+    color: #128642;
+    font-weight: bold;
+    letter-spacing :1px ;
+    border: none;
+    border-radius: 100px;
+}
+

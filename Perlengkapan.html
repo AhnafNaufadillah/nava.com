@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perlengkapan Mendaki - Paduk Mountain</title>
+    <link rel="stylesheet" href="stile.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variabel Warna Hijau Pegunungan */
+        :root {
+            --green-dark: #0A3A2A; /* Hijau lumut gelap */
+            --green-medium: #1B5E20; /* Hijau daun */
+            --green-light: #4CAF50; /* Hijau cerah */
+            --background-color: #F8F9FA; /* Warna latar belakang terang */
+            --text-color: #333;
+        }
+
+        /* Styling Umum */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header dan Judul */
+        .header-content {
+            background-color: var(--green-dark);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .header-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Layout Perlengkapan Pakaian */
+        .gear-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .gear-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        /* --- KODE ANIMASI DIMULAI DI SINI --- */
+        
+        /* 1. Definisikan Keyframe Animasi */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 2. Terapkan Animasi pada Kartu */
+        .layer-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            flex: 1;
+            min-width: 280px;
+            text-align: left;
+
+            /* Properti Animasi */
+            opacity: 0; /* Mulai dari tersembunyi */
+            animation-name: fadeInUp;
+            animation-duration: 0.8s;
+            animation-fill-mode: forwards; /* Pertahankan status akhir */
+            
+            /* Gabungkan transisi untuk hover dan animasi */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+        }
+
+        .layer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 3. Terapkan Delay Berurutan (Staggered) */
+        .layer-card:nth-child(1) {
+            animation-delay: 0.2s; 
+        }
+
+        .layer-card:nth-child(2) {
+            animation-delay: 0.4s; 
+        }
+
+        .layer-card:nth-child(3) {
+            animation-delay: 0.6s; 
+        }
+        /* --- KODE ANIMASI BERAKHIR DI SINI --- */
+
+        .layer-card h3 {
+            color: var(--green-medium);
+            font-size: 1.5rem;
+            margin-top: 0;
+            border-bottom: 2px solid var(--green-light);
+            padding-bottom: 10px;
+        }
+
+        .layer-card img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .layer-card p strong {
+            color: var(--green-dark);
+        }
+
+        /* Untuk perangkat seluler */
+        @media (max-width: 768px) {
+            .gear-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .layer-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .header-content h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Styling Navbar yang Diperbaiki - MENGGUNAKAN WARNA GREEN-DARK */
+        .navbar {
+            /* Warna Latar Belakang disamakan dengan warna Green Dark (#0A3A2A) dari Screenshot 2 */
+            background-color: var(--green-dark); 
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .footer {
+            background-color: var(--green-dark);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">⛰️ Paduk Mountain</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="DaftarPegunungan.html">Daftar Pegunungan</a></li>
+            <li><a href="Perlengkapan.html">Perlengkapan</a></li>
+            <li><a href="https://wa.me/6285222913673">Kontak</a></li>
+    </nav>
+
+    <div class="header-content">
+        <div class="container">
+            <h1>Perlengkapan Wajib Mendaki</h1>
+            <p>Panduan penting untuk memilih sistem pakaian yang tepat demi kenyamanan dan keamanan di gunung.</p>
+        </div>
+    </div>
+    
+    <div class="container gear-section">
+        <h2>Sistem Pakaian 3 Lapisan (Layering System)</h2>
+        
+        <div class="gear-list">
+            
+            <div class="layer-card">
+                <h3>1. Base Layer (Lapisan Dasar)</h3>
+                <img src="baselayer.jpeg" alt="Foto Pakaian Base Layer">
+                <p><strong>Fungsi Utama:</strong> Mengelola kelembaban dan mengatur suhu tubuh.</p>
+                <p>Lapisan ini bersentuhan langsung dengan kulit Anda. Fungsinya adalah menyerap dan menguapkan keringat dari tubuh untuk menjaga Anda tetap kering. Bahan terbaik adalah wol merino atau poliester sintetis.</p>
+                <p><strong>Penting:</strong> Hindari katun karena menyimpan kelembaban, membuat Anda kedinginan saat berhenti bergerak.</p>
+            </div>
+            
+            <div class="layer-card">
+                <h3>2. Mid Layer (Lapisan Tengah)</h3>
+                <img src="mid layer.jpeg" alt="Foto Pakaian Mid Layer">
+                <p><strong>Fungsi Utama:</strong> Menjebak panas dan memberikan isolasi.</p>
+                <p>Lapisan ini menyediakan kehangatan. Mid layer menjebak udara panas yang dihasilkan tubuh, bertindak sebagai isolator. Bahan yang umum digunakan termasuk fleece (bulu domba sintetis), jaket down (bulu angsa), atau jaket sintetis.</p>
+                <p>Tingkat ketebalan disesuaikan dengan suhu lingkungan yang Anda daki.</p>
+            </div>
+            
+            <div class="layer-card">
+                <h3>3. Outer Layer (Lapisan Luar)</h3>
+                <img src="outerlayer.jpeg" alt="Foto Pakaian Outer Layer">
+                <p><strong>Fungsi Utama:</strong> Melindungi dari angin dan hujan.</p>
+                <p>Dikenal juga sebagai shell layer. Lapisan terluar ini berfungsi sebagai perisai terhadap elemen luar, seperti angin dan hujan (waterproof). Idealnya, lapisan ini juga harus bernapas untuk mengeluarkan uap air dari lapisan dalam.</p>
+                <p>Carilah jaket dengan fitur Gore-Tex atau teknologi waterproof/windproof.</p>
+            </div>
+            
+        </div>
+        
+        <div style="margin-top: 50px; text-align: left; padding: 20px; background-color: #e8f5e9; border-left: 5px solid var(--green-medium); border-radius: 8px;">
+            <h3>Perlengkapan Wajib Lainnya:</h3>
+            <ul>
+                <li>Ransel / Carrier: Pilih yang sesuai dengan durasi pendakian (40L - 60L).</li>
+                <li>Alat Navigasi: Peta, Kompas, atau GPS (pastikan baterai terisi).</li>
+                <li>Pencahayaan: Senter kepala (Headlamp) dan baterai cadangan.</li>
+                <li>Peralatan Memasak: Kompor mini, bahan bakar, dan logistik makanan.</li>
+                <li>P3K: Kit obat-obatan pribadi dan pertolongan pertama.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        &copy; 2025 Paduk Mountain - Hak Cipta Ahnaf
+    </footer>
+</body>
+</html>
