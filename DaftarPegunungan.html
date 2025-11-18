@@ -9,15 +9,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
+    <script>
+        // FUNGSI UTAMA TRANSISI
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Fade-In saat Halaman Selesai Dimuat (termasuk saat tombol 'back' browser ditekan)
+            document.body.style.opacity = '1';
+        });
+
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            const url = link ? link.getAttribute('href') : null;
+            
+            // 2. Fade-Out saat Link Internal Diklik
+            // Cek apakah yang diklik adalah link, bukan tombol WhatsApp, dan mengarah ke file .html
+            if (link && url && url.endsWith('.html') && link.target !== '_blank') { 
+                e.preventDefault(); // Hentikan navigasi segera
+                
+                document.body.classList.add('page-transition'); // Memicu fade-out (opacity: 0)
+                
+                // Tunggu hingga transisi selesai (0.4 detik), baru pindah halaman
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 400); 
+            }
+        });
+    </script>
     <style>
         /* CSS Umum dan Penengahan */
         body {
-            margin: 0;
-            padding: 0;
-            /* Menghapus min-height pada body karena akan ditangani oleh wrapper */
-            padding-bottom: 50px;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
+            /* Hilangkan padding: 0 dan ganti dengan memastikan margin dan padding 0 secara universal */
+        margin: 0 !important; /* Tambahkan !important sebagai penegas */
+        padding: 0 !important; /* Tambahkan !important sebagai penegas */
+        /* ... sisa style body lainnya ... */
+        padding-bottom: 50px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
         }
 
         /* BACKGROUND BARU + Perbaikan Pemusatan Vertikal */
@@ -103,21 +129,11 @@
             background-color: rgba(0,0,0,0.8);
         }
         
-        /* Navbar Dibuat Fixed agar tidak mengganggu pemusatan vertikal */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 30; 
-            /* Contoh Background-color - sesuaikan dengan stile.css Anda */
-            background-color: #386641; 
-        }
-
         /* Footer */
         .footer {
             text-align: center;
             padding: 10px;
-            background-color: #333; 
+            background-color: #033a15; 
             color: white;
             width: 100%;
             /* Penting: Pertahankan Fixed Position */
@@ -129,11 +145,11 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="#" class="logo">⛰️ Paduk Mountain</a>
+        <a href="#" class="logo">⛰️ Ahnaf Adventure</a>
         <ul class="nav-links">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="DaftarPegunungan.html">Daftar Pegunungan</a></li>
-            <li><a href="Perlengkapan.html" target="_blank">Perlengkapan</a></li>
+            <li><a href="Perlengkapan.html">Perlengkapan</a></li>
             <li><a href="https://wa.me/6283124398466">Kontak</a></li>
         </ul>
         <button class="menu-toggle" aria-label="Toggle navigation">
@@ -150,17 +166,33 @@
             
             <div class="kodfun-galeri" id="image-slider">
                 <div class="slide" style="background-image: url(kodfun-galeri/kf11.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf21.jpg);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf12.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf15.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf16.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf17.jpg);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf1.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf18.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf19.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf20.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf13.jfif);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf9.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf22.jpg);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf2.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf23.jpg);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf3.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf24.jpg);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf7.jpg);"></div>
-                <div class="slide" style="background-image: url(kodfun-galeri/kf8.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf25.jpg);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf4.jpg);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf10.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf14.jfif);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf5.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf8.jpg);"></div>
                 <div class="slide" style="background-image: url(kodfun-galeri/kf6.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf26.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf27.jpg);"></div>
+                <div class="slide" style="background-image: url(kodfun-galeri/kf28.jpg);"></div>
             </div>   
             
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -170,7 +202,7 @@
     </div> 
     
     <footer class="footer">
-        &copy; 2025 Hak Cipta Ahnaf
+        &copy; 2025 Paduk Mountain - Hak Cipta Ahnaf
     </footer>
 
     <script>
