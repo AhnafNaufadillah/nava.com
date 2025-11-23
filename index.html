@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Pegunungan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="stile.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <script>
+      alert("I Need Some Mountain Time ⛰️ ");
+      // FUNGSI UTAMA TRANSISI
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Fade-In saat Halaman Selesai Dimuat (termasuk saat tombol 'back' browser ditekan)
+            document.body.style.opacity = '1';
+        });
+
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            const url = link ? link.getAttribute('href') : null;
+            
+            // 2. Fade-Out saat Link Internal Diklik
+            // Cek apakah yang diklik adalah link, bukan tombol WhatsApp, dan mengarah ke file .html
+            if (link && url && url.endsWith('.html') && link.target !== '_blank') { 
+                e.preventDefault(); // Hentikan navigasi segera
+                
+                document.body.classList.add('page-transition'); // Memicu fade-out (opacity: 0)
+                
+                // Tunggu hingga transisi selesai (0.4 detik), baru pindah halaman
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 400); 
+            }
+        });
+    </script>
+</head>
+<body>
+     <nav class="navbar">
+        <a href="#" class="logo">⛰️ Ahnaf Adventure</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li class="dropdown">
+                <a href="DaftarPegunungan.html">Daftar Pegunungan</a>
+                <div class="dropdown-content">
+                    <a href="aboutme.html">About Me</a>
+                </div>
+            </li>
+            <li><a href="Perlengkapan.html">Perlengkapan</a></li>
+            <li><a href="https://wa.me/6283124398466">Kontak</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h1 class="title"></h1>
+            <h2 class="subtitle"></h2>
+            <p class="description"></p>
+        </div>
+        <div class="card-container">
+            <div class="card active" data-index="0">
+                <img src="images/image1.jpg" alt="Image 1">
+            </div>
+            <div class="card" data-index="1">
+                <img src="images/image2.webp" alt="Image 2">
+            </div>
+            <div class="card" data-index="2">
+                <img src="images/image3.jpg" alt="Image 3">
+            </div>
+            <div class="card" data-index="3">
+                <img src="images/image4.jpg" alt="Image 3">
+            </div>
+            <div class="card" data-index="4">
+                <img src="images/image5.jpg" alt="Image 3">
+            </div>
+            <div class="card" data-index="5">
+                <img src="images/image6.jpg" alt="Image 3">
+            </div>
+            <div class="card" data-index="6">
+                <img src="images/image7.jpg" alt="Image 7">
+            </div>
+            <div class="card" data-index="7">
+                <img src="images/image8.jpg" alt="Image 8">
+            </div>
+            <div class="card" data-index="8">
+                <img src="images/image9.jpg" alt="Image 9">
+            </div>
+            <div class="card" data-index="9">
+                <img src="images/image10.jpg" alt="Image 10">
+            </div>
+            <div class="card" data-index="10">
+                <img src="images/image11.jpg" alt="Image 11">
+            </div>
+            </div>
+        </div>
+       <div class="card-container">
+            </div>
+        <div class="controls">
+            <button class="prev-btn">PREV</button>
+            <button class="next-btn">NEXT</button>
+            <span class="page-number">01</span>
+        </div>
+    </div>
+    
+    <footer style="text-align: center; padding: 10px; background-color: #333; color: white;">
+        &copy; 2025 Hak Cipta Ahnaf
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
